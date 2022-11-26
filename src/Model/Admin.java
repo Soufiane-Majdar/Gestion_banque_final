@@ -15,7 +15,7 @@ public class Admin extends User{
         super.role="Admin";
     }
 
-    
+
     public String toString() {
         String r = "\n";
         r += "        << "+role+" >>    |->\n";

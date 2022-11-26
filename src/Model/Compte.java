@@ -11,7 +11,6 @@ public class Compte {
 
 
 
-
     public Compte(){
         d_cration=LocalDate.now();
         // journalisation[j] = "Compte id : " + idCompte + " a ete crere le : " + d_cration;
