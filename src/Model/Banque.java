@@ -3,7 +3,7 @@ package Model;
 
 
 public class Banque {
-    private static int idBanque=0;
+    private int idBanque;
     private String nomAgence,emailAgence;
 
     private User[] users = new User[4];
@@ -14,14 +14,14 @@ public class Banque {
 
     public Banque(){}
 
-    public Banque(String nomAgence, String emailAgence) {
-        idBanque++;
+    public Banque(int idBanque,String nomAgence, String emailAgence) {
+        this.idBanque=idBanque;
         this.nomAgence = nomAgence;
         this.emailAgence = emailAgence;
     }
 
-    public static void setIdBanque(int idBanque) {
-        Banque.idBanque = idBanque;
+    public void setIdBanque(int idBanque) {
+        this.idBanque = idBanque;
     }
 
     public void setNomAgence(String nomAgence) {
@@ -36,7 +36,7 @@ public class Banque {
 
 
 
-    public static int getIdBanque() {
+    public  int getIdBanque() {
         return idBanque;
     }
 
