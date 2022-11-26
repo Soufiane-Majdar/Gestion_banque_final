@@ -1,4 +1,4 @@
 package Service.IHM;
 
-public class ServiceIHM_Admin {
+public class ServiceIHM_Admin implements I_ServiceIHM_Admin {
 }
