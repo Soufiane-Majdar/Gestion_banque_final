@@ -3,6 +3,8 @@ package View;
 import Model.Admin;
 import Model.Banque;
 import Service.Authentification.Service_Authentification;
+import Service.Banque.Service_Admin;
+import Service.Banque.Service_Client;
 import Service.IHM.ServiceIHM_Admin;
 import Service.IHM.ServiceIHM_Client;
 
@@ -14,6 +16,8 @@ public class Menu {
     public static Service_Authentification Authentification = new Service_Authentification();
     public static ServiceIHM_Client IHM_Client= new ServiceIHM_Client();
     public static ServiceIHM_Admin IHM_Admin = new ServiceIHM_Admin();
+    public static Service_Admin service_Admin = new Service_Admin();
+    public static Service_Client service_Client = new Service_Client();
     public static void Afficher_Menu(){
         Scanner clavier = new Scanner(System.in);
         System.out.println("=============================================");
