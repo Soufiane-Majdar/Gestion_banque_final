@@ -3,6 +3,7 @@ package Model;
 public class Client extends User {
 
     private Compte[] comptes = new Compte[4];
+    public int  nbrCompte=0;
 
 
     public Client(int id, String nom, String prenom, String email, String password) {

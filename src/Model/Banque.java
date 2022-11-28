@@ -7,17 +7,24 @@ public class Banque {
     private String nomAgence,emailAgence;
 
     private User[] users = new User[4];
+    public int nbrUser=0;
 
 
 
 
 
-    public Banque(){}
+    public Banque(){
+        Admin admin = new Admin();
+        users[nbrUser]=admin;
+    }
 
     public Banque(int idBanque,String nomAgence, String emailAgence) {
         this.idBanque=idBanque;
         this.nomAgence = nomAgence;
         this.emailAgence = emailAgence;
+
+        Admin admin = new Admin();
+        users[nbrUser]=admin;
     }
 
     public void setIdBanque(int idBanque) {
