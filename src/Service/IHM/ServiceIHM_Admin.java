@@ -1,5 +1,7 @@
 package Service.IHM;
 
+import View.Menu;
+
 import java.util.Scanner;
 import static View.Menu.*;
 public class ServiceIHM_Admin implements I_ServiceIHM_Admin {
@@ -18,6 +20,7 @@ public class ServiceIHM_Admin implements I_ServiceIHM_Admin {
         System.out.println("7- Modifier un client");
         System.out.println("8- Modifier un compte");
         System.out.println("9- afficher Banque");
+        System.out.println("10- Deconnexion");
 
         // choix
         System.out.print("Votre choix : ");
@@ -73,6 +76,10 @@ public class ServiceIHM_Admin implements I_ServiceIHM_Admin {
                 System.out.println("afficher Banque");
                 service_Admin.afficherBanque();
                 menu_Admin();
+                break;
+            case 10:
+                System.out.println("Deconnexion");
+                Menu.Afficher_Menu();
                 break;
             default:
                 System.out.println("Choix invalide");

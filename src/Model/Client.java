@@ -30,7 +30,10 @@ public class Client extends User {
     public String toString() {
         String r = "\n";
         r += "        << "+role+" >>    |->\n";
+
         r += super.toString();
+        for(int i=0 ; i<comptes.size();i++)
+            r+=comptes.get(i).toString();
         return r;
     }
 

@@ -61,15 +61,18 @@ public class Service_Authentification implements I_Service_Authentification {
 
         boolean loged=false;
         for (int i=0 ; i<banque.getUsers().size() ; i++) {
-                System.out.println(banque.getUsers().get(i).getPassword());
-                System.out.println(banque.getUsers().get(i).getEmail());
-                System.out.println(email);
-                System.out.println(password);
+                // System.out.println(banque.getUsers().get(i).getPassword());
+                // System.out.println(banque.getUsers().get(i).getEmail());
+                // System.out.println(email);
+                // System.out.println(password);
                 if (banque.getUsers().get(i).getPassword().equals(password) && banque.getUsers().get(i).getEmail().equals(email)) {
                     System.out.println("Login Success");
 
                     if(banque.getUsers().get(i).getRole()=="Client")
+                    {
+                        IHM_Client.logedUser = banque.getUsers().get(i);
                         IHM_Client.menu_Client();
+                    }
                     else if(banque.getUsers().get(i).getRole()=="Admin")
                         IHM_Admin.menu_Admin();
 
