@@ -23,10 +23,10 @@ public class Service_Admin implements I_Service_Admin {
         Client c=new Client(id,nom,prenom,email,password);
 
         boolean not_exist=true;
-        for (int i=0;i<banque.getUsers().length;i++) {
-            if(banque.getUsers()[i]!=null)
+        for (int i=0;i<banque.getUsers().size();i++) {
+            if(banque.getUsers().get(i)!=null)
             {
-                if ( banque.getUsers()[i].getId()==c.getId()) {
+                if ( banque.getUsers().get(i).getId()==c.getId()) {
                     not_exist=false;
                 }
             }
@@ -34,9 +34,8 @@ public class Service_Admin implements I_Service_Admin {
         }
         if(not_exist)
         {
-            if(banque.nbrUser<banque.getUsers().length) {
-                banque.getUsers()[banque.nbrUser] = c;
-                banque.nbrUser++;
+            if(banque.getUsers().size()<3) {
+                banque.getUsers().add(c);
                 System.out.println("\nClient créé avec succès!");
                 System.out.println("=============================================\n");
                 return true;
@@ -74,10 +73,10 @@ public class Service_Admin implements I_Service_Admin {
 
         boolean not_exist=true;
         int UserP=5;
-        for (int i=0;i<banque.getUsers().length;i++) {
-            if(banque.getUsers()[i]!=null)
+        for (int i=0;i<banque.getUsers().size();i++) {
+            if(banque.getUsers().get(i)!=null)
             {
-                if ( banque.getUsers()[i].getId()==idC) {
+                if ( banque.getUsers().get(i).getId()==idC) {
                     not_exist=false;
                     UserP=i;
                 }
@@ -86,9 +85,8 @@ public class Service_Admin implements I_Service_Admin {
         }
         if(not_exist && UserP!=5)
         {
-            /*if(banque.getUsers()[UserP]<banque.getUsers()[UserP].getCompte()) {
-                banque.getUsers()[UserP].getCompte()[banque.getUsers()[UserP].nbrCompte] = c;
-                banque.getUsers()[UserP].nbrCompte++;
+            if(banque.getUsers().get(UserP).getComptes().size()<3) {
+                banque.getUsers().get(UserP).getComptes().add(c);
                 System.out.println("\nCompte est créé avec succès!");
                 System.out.println("=============================================\n");
                 //boolean b=verser(233,c);
@@ -99,8 +97,7 @@ public class Service_Admin implements I_Service_Admin {
                 System.out.println("vous avez atteint le nombre maximum de comptes!");
                 System.out.println("=============================================\n");
                 return false;
-            }*/
-            return false;
+            }
         }
         else
         {
@@ -109,5 +106,7 @@ public class Service_Admin implements I_Service_Admin {
         }
 
     }
+
+
 
 }

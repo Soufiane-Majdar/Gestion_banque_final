@@ -30,7 +30,13 @@ public class Menu {
                 System.out.println("Au revoir !");
                 break;
             case 1:
-                Authentification.login();
+                if(!Authentification.login())
+                {
+                    System.out.println("Erreur");
+                    //System.out.println(banque.getUsers().get(0).getEmail());
+                    //System.out.println(banque.getUsers().get(0).getPassword());
+                    Afficher_Menu();
+                }
                 break;
             default:
                 System.out.println("Choix invalide");

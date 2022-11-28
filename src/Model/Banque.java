@@ -1,21 +1,20 @@
 package Model;
 
 
+import java.util.ArrayList;
 
 public class Banque {
     private int idBanque;
     private String nomAgence,emailAgence;
 
-    private User[] users = new User[4];
-    public int nbrUser=0;
-
+    private ArrayList<User> users = new ArrayList<User>();
 
 
 
 
     public Banque(){
         Admin admin = new Admin();
-        users[nbrUser]=admin;
+        users.add(admin);
     }
 
     public Banque(int idBanque,String nomAgence, String emailAgence) {
@@ -24,7 +23,7 @@ public class Banque {
         this.emailAgence = emailAgence;
 
         Admin admin = new Admin();
-        users[nbrUser]=admin;
+        users.add(admin);
     }
 
     public void setIdBanque(int idBanque) {
@@ -57,11 +56,11 @@ public class Banque {
 
 
 
-    public User[] getUsers() {
+    public ArrayList<User> getUsers() {
         return users;
     }
 
-    public void setUsers(User[] users) {
+    public void setUsers(ArrayList<User> users) {
         this.users = users;
     }
 

@@ -4,8 +4,7 @@ import Model.Banque;
 
 import java.util.Scanner;
 
-import static View.Menu.IHM_Client;
-import static View.Menu.banque;
+import static View.Menu.*;
 
 public class Service_Authentification implements I_Service_Authentification {
     public Service_Authentification(){}
@@ -25,16 +24,20 @@ public class Service_Authentification implements I_Service_Authentification {
         System.out.println("=============================================");
 
         boolean loged=false;
-        for (int i=0 ; i<banque.getUsers().length ; i++) {
-            if(banque.getUsers()[i]!=null) {
-                if (banque.getUsers()[i].getPassword() == password && banque.getUsers()[i].getEmail().equals(email)) {
+        for (int i=0 ; i<banque.getUsers().size() ; i++) {
+                System.out.println(banque.getUsers().get(i).getPassword());
+                System.out.println(banque.getUsers().get(i).getEmail());
+                if (banque.getUsers().get(i).getPassword() == password && banque.getUsers().get(i).getEmail()==email) {
                     System.out.println("Login Success");
 
-                    if(banque.getUsers()[i].getRole()=="Client")
+                    if(banque.getUsers().get(i).getRole()=="Client")
                         IHM_Client.menu_Client();
 
+                    if(banque.getUsers().get(i).getRole()=="Admin")
+                        IHM_Admin.menu_Admin();
+
                     loged = true;
-                }
+
             }
         }
 

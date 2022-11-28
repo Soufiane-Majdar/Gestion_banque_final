@@ -11,7 +11,7 @@ public class Admin extends User{
     // }
 
     public Admin() {
-        super(1,"admin","admin","admin@agence.ma","admin");
+        super(1,"admin","admin","admin@mail.ma","admin");
         super.role="Admin";
     }
 

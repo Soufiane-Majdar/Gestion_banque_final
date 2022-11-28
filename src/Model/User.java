@@ -1,6 +1,7 @@
 package Model;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.regex.*;
 
 public class User {
@@ -11,6 +12,16 @@ public class User {
   protected String password;
   protected String role;
   protected LocalDate d_cration;
+
+  protected ArrayList<Compte> comptes = new ArrayList<Compte>();
+
+  public ArrayList<Compte> getComptes() {
+    return comptes;
+  }
+
+  public void setComptes(ArrayList<Compte> comptes) {
+    this.comptes = comptes;
+  }
 
   public User(int id, String nom, String prenom, String email,String password) {
     this.id = id;
